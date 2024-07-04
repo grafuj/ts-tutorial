@@ -1,10 +1,11 @@
 import { expect, it } from "vitest";
 
-export const getName = (first: string, last: string) => {
-  if (last) {
-    return `${first} ${last}`;
+
+export const getName = (first?: string, last?: string) => {
+  if (!last) {
+    return first;
   }
-  return first;
+  return `${first} ${last}`;
 };
 
 it("Should work with just the first name", () => {
